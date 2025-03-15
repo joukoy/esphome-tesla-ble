@@ -19,7 +19,7 @@ Tested with M5Stack NanoC6, ESP-Wroom-32D and Tesla firmwares 2024.26.3.1.
 - [x] Turn on/off steering heat 
 - [x] Turn on/off Sentry mode
 - [x] Open/Close Charge Port Door
-- [x] Open Charge Port Door with pushbutton connected between GPIO0 and GND
+- [x] Open Charge Port Door with pushbutton connected between GPIO0 and GND (HA connection not required)
 - [x] BLE information sensors
   - [x] Asleep / awake
   - [x] Doors locked / unlocked
