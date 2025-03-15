@@ -7,7 +7,7 @@ packages:
   board: !include board.yml
   common: !include common.yml
   project: !include project.yml
-
+  localbutton: !include localbutton.yml
 esphome:
   name: ${device_name}
   name_add_mac_suffix: true

@@ -1,7 +1,12 @@
+substitutions:
+  ble_mac_address: !secret ble_mac_address
+  tesla_vin: !secret tesla_vin
+  charging_amps_max: "32"
+
 ble_client:
   - mac_address: $ble_mac_address
     id: ble_tesla_id
-
+    
 tesla_ble_vehicle:
   ble_client_id: ble_tesla_id
   id: tesla_ble_vehicle_id

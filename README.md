@@ -1,7 +1,7 @@
 # ESPHome Tesla BLE
 
 This project lets you use an ESP32 device to manage charging a Tesla vehicle over BLE, using the [yoziru/tesla-ble](http://github.com/yoziru/tesla-ble) library.
-Tested with M5Stack NanoC6 and Tesla firmwares 2024.26.3.1.
+Tested with M5Stack NanoC6, ESP-Wroom-32D and Tesla firmwares 2024.26.3.1.
 
 | Controls | Sensors | Diagnostic |
 | - | - | - |
@@ -19,6 +19,7 @@ Tested with M5Stack NanoC6 and Tesla firmwares 2024.26.3.1.
 - [x] Turn on/off steering heat 
 - [x] Turn on/off Sentry mode
 - [x] Open/Close Charge Port Door
+- [x] Open Charge Port Door with pushbutton connected between GPIO0 and GND
 - [x] BLE information sensors
   - [x] Asleep / awake
   - [x] Doors locked / unlocked
@@ -60,6 +61,7 @@ Tested with M5Stack NanoC6 and Tesla firmwares 2024.26.3.1.
 1. Connect your ESP32 device to your computer via USB
 1. Copy and rename `secrets.yaml.example` to `secrets.yaml` and update it with your WiFi credentials (`wifi_ssid` and `wifi_password`) and vehicle details (`ble_mac_address` and `tesla_vin`)
 1. Build the image with [ESPHome](https://esphome.io/guides/getting_started_command_line.html)
+> Note: the make commands are just a wrapper around the `esphome` command. You can also use the `esphome` commands directly if you prefer (e.g. `esphome compile tesla-ble-m5stack-nanoc6.yml`)
 
     ```sh
     make compile BOARD=m5stack-nanoc6
@@ -81,7 +83,6 @@ Tested with M5Stack NanoC6 and Tesla firmwares 2024.26.3.1.
     make upload HOST_SUFFIX=-5b2ac7
     ```
 
-> Note: the make commands are just a wrapper around the `esphome` command. You can also use the `esphome` commands directly if you prefer (e.g. `esphome compile tesla-ble-m5stack-nanoc6.yml`)
 
 ### Adding the device to Home Assistant
 

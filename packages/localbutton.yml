@@ -1,0 +1,19 @@
+binary_sensor:
+  - platform: gpio
+    name: "Release cable pushbutton"
+    filters:
+      - invert:
+      - delayed_on: 100ms
+      - delayed_off: 100ms      
+    pin: GPIO0
+#    number: GPIO0
+#        mode:
+#           input: true
+#            pullup: true    
+    on_click:
+      min_length: 50ms
+      max_length: 350ms
+      then:
+      - lambda: id(tesla_ble_vehicle_id)->wakeVehicle();
+      - delay: 5s
+      - lambda: id(tesla_ble_vehicle_id)->sendCarServerVehicleActionMessage(SET_OPEN_CHARGE_PORT_DOOR,1);
